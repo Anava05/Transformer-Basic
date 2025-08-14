@@ -2,14 +2,14 @@
 
 # Transformer Basic
 
-This repository contains a fundamental, from-scratch implementation of the Transformer encoder block in PyTorch. It is designed to be a clear, modular, and educational resource for understanding the core components of the Transformer architecture.
+This repository contains a fundamental, from-scratch implementation of the Transformer decoder block in PyTorch. It is designed to be a clear, modular, and educational resource for understanding the core components of the Transformer architecture along with various other optimisations.
 
 ---
 
 ## Features
 
 -   **Modular Components**: The architecture is broken down into logical modules: `attention`, `MHA` (Multi-Head Attention), and `normalize`, making it easy to understand each part individually.
--   **Standard Transformer Encoder**: Implements a complete Transformer encoder block, including Multi-Head Self-Attention, residual connections, layer normalization, and a position-wise feed-forward network.
+-   **Standard Transformer decoder**: Implements a complete Transformer decoder block, including Multi-Head Self-Attention, residual connections, layer normalization, and a position-wise feed-forward network.
 -   **Pure PyTorch**: Built entirely using standard PyTorch libraries, ensuring seamless integration into any PyTorch-based project.
 -   **Customizable Dimensions**: Flexible aPI allows for easy configuration of model dimensions, number of heads, and dropout rates.
 
@@ -17,7 +17,7 @@ This repository contains a fundamental, from-scratch implementation of the Trans
 
 ## How It Works
 
-The `transformers` module encapsulates the logic of a single encoder block from the original "Attention Is All You Need" paper. This block processes an input sequence of embeddings and produces an output sequence of the same length.
+The `transformer_basic` module decapsulates the logic of a single decoder block from the original "Attention Is All You Need" paper. This block processes an input sequence of embeddings and produces an output sequence of the same length.
 
 ### Core Components
 
@@ -67,7 +67,7 @@ dropout = 0.1       # Dropout rate
 # (batch_size, sequence_length, embedding_dimension)
 input_embeddings = torch.randn(batch_size, seq_length, d_model)
 
-# 3. Instantiate the Transformer encoder block
+# 3. Instantiate the Transformer decoder block
 transformer_block = transformers(
     d_model=d_model,
     heads=heads,
